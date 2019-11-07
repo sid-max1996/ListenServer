@@ -2,15 +2,35 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Listen Server</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <div class="container mt-3">
+      <div class="row" style="display: flex; align-items: center; justify-content: center;">
+        <div class="col-2">
+          Порт:
+        </div>
+        <div class="col-3">
+          <input id="port-input" class="form-control" id="serverPort" min="0" step="1" type="number" value="7000">
+        </div>
+        <div class="col-3">
+          <button id="run-btn" class="btn btn-secondary">Запустить</button>
+        </div>
+      </div>
+      <div id="message" class="row mt-3 alert" style="visibility: hidden;"></div>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+      <div id="query-message" class="row mt-3 py-2 alert-secondary" style="visibility: hidden;">
+        <div class="col-12 text-center">
+          <h3>ЗАПРОС:</h3>
+        </div>
+        <div id="method" class="col-12"></div>
+        <div id="path" class="col-12"></div>
+        <div id="query" class="col-12"></div>
+        <div id="body" class="col-12"></div>
+        <div id="headers" class="col-12"></div>
+      </div>
+    </div>
   </body>
+  <script src="./renderer.js"></script>
 </html>

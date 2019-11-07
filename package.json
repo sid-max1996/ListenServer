@@ -1,22 +1,37 @@
 {
-  "name": "electron-quick-start",
+  "name": "listen-server",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Listen Server",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
   "author": "GitHub",
   "license": "CC0-1.0",
+  "build": {
+    "productName": "ListenServer",
+    "win": {
+      "icon": "build/server.png",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
   "devDependencies": {
-    "electron": "^7.0.0"
+    "electron": "^7.0.0",
+    "electron-builder": "^22.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ip": "^1.1.5"
   }
 }
